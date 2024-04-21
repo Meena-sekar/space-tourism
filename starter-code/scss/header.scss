@@ -1,0 +1,101 @@
+@import 'mixin';
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    .menu-holder {
+        display: none;
+        font: normal normal normal $regular-size $font-family-1;
+        text-transform: uppercase;
+        width: 70%;
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+        backdrop-filter: blur(50px);
+        .menu {
+            position: static;
+            &-item {
+                display: flex;
+                flex-flow: column wrap;
+                align-items: flex-start;
+                position: absolute;
+                top: 20%;
+               a {
+                padding: 10px;
+                margin: 6px;
+                letter-spacing: 2.7px;
+                display: inline-block;
+               }
+            }
+            &.active {
+                border-bottom: 1px solid;
+            }
+        }
+    }
+    .logo {
+        width: 40px;
+        height: 40px;
+        a {
+            display: inline-block;
+        }
+
+    }
+}
+
+.crew {
+    .header-wrapper {
+        .menu-holder {
+            background-color: $black-haze;
+            opacity: .9;
+            z-index: 3;
+        }
+    }
+}
+
+.toggler {
+    cursor: pointer;
+    .humberger-icon {
+        @include bg-image(url(../assets/shared/icon-hamburger.svg), top center, contain, no-repeat);
+        display: inline-block;
+        width: 25px;
+        height: 20px;
+        position: relative;
+        z-index: 4;
+    }
+    &.active {
+        .humberger-icon {
+            @include bg-image(url(../assets/shared/icon-close.svg), top center, contain, no-repeat);
+        }
+    }
+}
+
+.close-icon {
+    display: none;
+    position: relative;
+    z-index: 2;
+}
+
+@media (min-width: $tablet) {
+    .header-wrapper .menu-holder .menu {
+        position: absolute;
+        top: 17%;
+        left: 10%;
+        &-item {
+            display: block;
+            position: static;
+           a {
+            padding: 10px;
+            margin: 6px;
+            letter-spacing: 2.7px;
+            display: inline-block;
+           }
+        }
+        &.active {
+            border-bottom: 1px solid;
+        }
+    }
+}

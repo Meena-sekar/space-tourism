@@ -1,0 +1,182 @@
+/* RESET RULES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import 'variables.scss';
+  
+  * {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Barlow Condensed';
+    color: $white;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+  }
+  
+  input,
+  button {
+    font-family: inherit;
+    font-size: 100%;
+    background: none;
+  }
+  
+  
+  button,
+  label {
+    cursor: pointer;
+  }
+  
+  ol, li {
+    list-style: none;
+  }
+  
+  .container {
+    max-width: 1450px;
+    padding: 0 1.56rem;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: $font-family-3;
+  }
+
+  h1 {
+    font-size: $heading-1;
+  }
+
+  h2 {
+    font-size: $heading-2;
+  }
+
+  h3 {
+    font-size: $heading-3;
+  }
+  h4 {
+    font-size: $heading-4;
+  }
+  h5 {
+    font-size: $heading-5;
+  }
+
+  .regular-heading {
+    font-size: $regular-heading;
+  }
+
+  .nav-tabs {
+    border: none;
+    justify-content: center;
+    .nav-link {
+      font-size: $subheading-2;
+      letter-spacing: 2.36px;
+      text-transform: uppercase;
+      background-color: transparent;
+      color: $white;
+      padding: 5px;
+      display: inline;
+      &.active {
+        background-color: transparent;
+        color: $white;
+        border: none;
+        border-bottom: 1px solid $white;
+      }
+    }
+  }
+
+  .tab-content {
+    padding-bottom: 50px;
+    .tab-pane {
+      font-size: 1rem;
+      color: $grey;
+      font-family: $font-family-2;
+      line-height: 1.5;
+      .planet-img {
+        display: none;
+      }
+    }
+  }
+
+  .nav-justified .nav-item {
+    flex-grow: initial;
+    margin: 0 14px;
+
+  }
+
+  .title-large {
+    color: $white;
+    letter-spacing: 2.7px;
+    font: normal normal 5rem/100px $font-family-3;
+    text-transform: uppercase;
+    display: block;
+    span {
+      color: $grey;
+      display: block;
+      font: normal normal 1rem $font-family-1;
+      margin-bottom: 1rem;
+      opacity: .7;
+    }
+  }
+
+  .title-medium {
+    @extend .title-large;
+      font-size: $heading-3;
+  }
+
+  .description {
+    color: $grey;
+    text-align: center;
+    font: normal normal normal 1rem/25px $font-family-2;
+    opacity: .7;
+  }
+
+  .destination-details {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(208, 214, 249, .5);
+  }
+
+  .distance, .time {
+    letter-spacing: 2.36px;
+    text-transform: uppercase;
+    color: $grey;
+    .sub-heading--main {
+      color: $white;
+    }
+
+  }
+
+  .sub-heading {
+    font: normal normal normal $regular-size $font-family-1;
+    letter-spacing: 2.7px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    .count {
+      margin-right: 12px;
+      color: $grey-haze;
+    }
+    &--main {
+      font: normal normal normal $subheading-1 $font-family-3;
+      display: block;
+      margin-top: 12px;
+
+    }
+  }
+

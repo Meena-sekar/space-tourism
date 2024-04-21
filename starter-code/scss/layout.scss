@@ -1,0 +1,373 @@
+@import 'mixin';
+
+body {
+    height: 100vh;
+    background-attachment: fixed;
+    &.home {
+        @include bg-image(url('../assets/home/background-home-mobile.jpg'), top center, cover, no-repeat);
+    }
+    &.destination {
+        @include bg-image(url('../assets/destination/background-destination-mobile.jpg'), top center, cover, no-repeat);
+    }
+    &.crew {
+        @include bg-image(url('../assets/crew/background-crew-mobile.jpg'), top center, cover, no-repeat);
+        backdrop-filter: brightness(0.7);
+    }
+    &.launch-vehicle {
+        @include bg-image(url('../assets/technology/background-technology-mobile.jpg'), top center, cover, no-repeat);
+    }
+}
+
+.hero-banner {
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.split-banner {
+    margin-bottom: 2.5rem;
+}
+
+.planet-img {
+    max-width: 170px;
+    margin: 30px 15px 25px;
+}
+
+.circle {
+    @include circle(150px, 150px, $white, 100%, flex);
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+    margin: 5rem auto 2.5rem;
+    transition: .3s;
+    border: 1px solid $grey-haze;
+
+
+    &-content {
+        font: normal normal 1.25rem $font-family-3;
+        letter-spacing: 1.25px;
+        color: $black-haze;
+        text-transform: uppercase;
+    }
+    &:hover {
+        border: 88px solid $grey-haze;
+        transition: .3s;
+    }
+}
+
+.carousel {
+    &-caption {
+        position: static;
+        h5 {
+            font: normal normal normal $regular-size $font-family-3;
+            text-transform: uppercase;
+            color: $grey-haze;
+        }
+        .title-medium {
+            font: normal bold $regular-heading $font-family-3;
+            text-transform: uppercase;
+            color: $white;
+        }
+        p {
+            font: normal normal normal $regular-size $font-family-2;
+            line-height: 25px;
+            color: rgba(208, 214, 249, 0.9);
+        }
+    }
+    &-indicators {
+        top : 50%;
+        column-gap: 15px;
+    }
+    &-indicators [data-bs-target] {
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+    }
+}
+
+.crew {
+    .carousel {
+        &-item {
+            img {
+                margin: 0 auto 5rem;
+                padding: 0 6rem;
+                border-bottom: 1px solid rgba(208, 214, 249, .2);
+            }
+        }
+    }
+}
+
+.launch-vehicle {
+    main {
+        .container {
+            padding: 0;
+        }
+    }
+    .carousel {
+        &-inner {
+            .carousel-item:nth-child(2) {
+                img {
+                    width: 60%;
+                    margin: auto auto 15%;
+                    object-position: center;
+                }
+            }
+
+        }
+        &-item {
+            img {
+                width: 100%;
+                height: 170px;
+                object-fit: cover;
+                object-position: bottom;
+                margin-bottom: 15%;
+            }
+        }
+        &-caption {
+            padding: 20px 25px;
+        }
+        &-indicators {
+            top: 35%;
+            button {
+                text-indent: initial;
+                width: 40px;
+                height: 40px;
+                border: 1px solid;
+                &:not(.active) {
+                    filter: invert(1);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $tablet) {
+    .tab-content {
+        max-width: 580px;
+        margin: 0 auto;
+    }
+    .launch-vehicle {
+        .carousel {
+            &-item {
+                img {
+                    height: 320px;
+            
+                }
+            }
+            &-indicators {
+                bottom: 35%;
+            }
+       
+        }
+    }
+    .carousel-caption {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    body {
+        height: 100vh;
+        background-attachment: fixed;
+        &.home {
+            background-image: url('../assets/home/background-home-tablet.jpg')
+        }
+        &.destination {
+            background-image: url('../assets/destination/background-destination-tablet.jpg')
+        }
+        &.crew {
+            background-image: url('../assets/crew/background-crew-tablet.jpg')
+        }
+        &.launch-vehicle {
+            background-image: url('../assets/technology/background-technology-tablet.jpg'),
+        }
+    }
+    .circle {
+        @include circle(242px, 242px, $white, 100%, flex);
+    }
+    .toggler {
+        display: none;
+    }
+    .header-wrapper {
+        padding-block-start: 0;
+        padding-inline-end: 0;
+        .menu-holder {
+            display: block;
+            position: initial;
+            width: auto;
+            padding-top: 1rem;
+            background-color: rgba(77, 79, 86, .2);
+            .menu-wrapper {
+                display: flex;
+                justify-content: flex-end;
+                margin-bottom:  0;
+
+            }
+
+            .menu {
+                position: initial;
+                display: flex;
+                justify-content: flex-end;
+                padding-bottom: 2rem !important;
+
+            }
+        }
+
+    }
+    .planet-img {
+        max-width: 300px;
+    }
+    .crew {
+        .carousel {
+            &-indicators {
+                position: absolute;
+                bottom: 75%;
+            }
+            &-item {
+                img {
+                    padding: initial;
+                }
+            }
+        }
+    }
+   
+
+    .sub-heading {
+        text-align: left;
+        padding: 40px 40px 60px 40px;
+    }
+    .carousel-indicators {
+        top: initial;
+    }
+
+    
+}
+
+@media (min-width: $desktop) {
+    body {
+        &.destination {
+            .tab-content {
+                max-width: 75%;
+                margin: initial;
+            }
+        }
+    
+        .sub-heading {
+            padding-inline: 0;
+        }
+        .header-wrapper .menu-holder .menu-wrapper {
+            width: 100%;
+        }
+        .tab-content {
+            max-width: initial;
+            .tab-pane {
+                text-align: left;
+            }
+        }
+        .destination-details {
+            display: flex;
+            column-gap: 80px;
+            flex-direction: row;
+        }
+        .nav-tabs .nav-item:first-child {
+            margin-left: 0;
+        }
+        .nav-tabs {
+            justify-content: flex-start;
+        }
+        &.home {
+            background-image: url('../assets/home/background-home-desktop.jpg');
+        }
+        &.destination {
+            background-image: url('../assets/destination/background-destination-desktop.jpg');
+        }
+        &.crew {
+            background-image: url('../assets/crew/background-crew-desktop.jpg');
+
+        }
+        &.launch-vehicle {
+            background-image: url('../assets/technology/background-technology-desktop.jpg');
+            .carousel-indicators {
+                display: grid;
+            }
+            .carousel-caption {
+                max-width: 70%;
+                margin-left: 7%;
+            }
+            .carousel-item img {
+                height: 525px;
+                object-fit: initial;
+            }
+        }
+        .carousel {
+            &-caption {
+                max-width: 85%;
+                text-align: left;
+                margin: 0;
+            }
+            &-indicators {
+                z-index: 3;
+                bottom: -1rem !important;
+                margin-inline: 0;
+                justify-content: flex-start;
+            }
+        }
+        .carousel {
+            &-item {
+                .carousel-caption {
+                    display: none;
+                }
+            }
+    
+        }
+        .hero-banner {
+            display: flex;
+            align-items: center;
+            padding-left: 120px;
+            .split-half {
+                width: 50%;
+                position: relative;
+                .description {
+                    max-width: 75%;
+                }
+                &.left {
+                    padding-left: 10%;
+                    padding-top: 10%;
+                    align-self: auto;
+                    * {
+                        text-align: left;
+                    }
+                }
+            
+            }
+            .circle {
+                max-width: 275px;
+                height: 275px;
+            }
+        }
+        .header-wrapper .menu-holder {
+            width: 90%;
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            &::before {
+                content: '';
+                height: 1px;
+                background: rgba(151, 151, 151, .5);
+                width: 100%;
+                display: inline-block;
+                position: relative;
+                left: 20px;
+            }
+        }
+        .menu-wrapper {
+            background-color: rgba(151, 151, 151, .1);
+            backdrop-filter: blur(20px);
+           .menu-item {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: flex-start;
+            column-gap: 50px;
+           }
+        }
+    }
+
+}

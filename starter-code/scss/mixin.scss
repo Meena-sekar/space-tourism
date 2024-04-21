@@ -1,0 +1,14 @@
+@mixin bg-image($background-image, $bg-position, $bg-size, $bg-repeat) {
+    background-image: $background-image;
+    background-position: $bg-position;
+    background-size: $bg-size; 
+    background-repeat: $bg-repeat;
+};
+
+@mixin circle($width, $height, $bg-color, $border-radius, $display) {
+    width: $width;
+    height: $height;
+    background-color: $bg-color;
+    border-radius: $border-radius;
+    display: $display;
+}
